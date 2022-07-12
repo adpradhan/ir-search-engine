@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>search</title>
+	<!--<link rel="stylesheet" href="C:\Users\prana\Desktop\FlaskT\static\master.css">-->
+	<link rel="stylesheet" href="{{ url_for('static', filename='master.css') }}">
+</head>
+<body>
+	<h1>NEWS Search Engine</h1>
+	<form action="/results" method="POST">
+		<input name="query" placeholder="type your query here" type="text" class="tab_search">
+		<!--<input type="submit" name="search" class="button_search">-->
+		<button type="submit" name="serach" class="button_search">Search</button>
+	</form>
+</body>
+</html>

@@ -1,0 +1,64 @@
+NEWS SEARCH ENGINE
+Modules:
+1. Reading and Pre-processing data
+	'''
+	This module reads the data, combines both headlines and summary
+
+	It then pre-processes data and returns a list of lists of tokenised and normalised sentences of corpus
+	'''
+
+	Methods:
+	def preprocess_docs(text) - preprocesses the text and returns a list of lists
+
+2. LDA - Topic Modelling
+	'''
+	This module works on preprocessed data
+
+	Runs LDA using bag of words
+
+	Build LDA topic score for each article and stores result in doc_lda (hashmap)
+	'''
+
+3. Index Construction (tf-idf)
+'''
+A hashmap called master_dict is constructed which contains tf, df and tf-idf scores of all unique words
+
+tf-idf values are L2 normalised
+'''
+
+4. Saving Models
+	'''
+	As training takes a lot of time models are saved 
+	'''
+
+	Methods:
+	def store_data() - stores all models
+	def load_data() - loads all models
+
+
+5. Extracting Results from query
+	'''
+	Takes a query and retrieves relevant data
+
+	Pre-processes, constructs tf-idf, calculates LDA topic scores of query
+
+	Calculates cosine similarity for query and documents in corpus
+
+	Return relavant documents
+	'''
+
+	Methods:
+	def getResults(query) - takes query as input and outputs a list with text and link to news article
+
+6. Flask Application
+	'''
+	Flask framework used for html, CSS frontend
+
+	Renders webpage and retrieves results for query
+	
+	Rendens results (with links to articles) on webpage
+	'''
+
+	Methods:
+	def give_query() - renders initial search page and takes query
+	def get_result() - renders results page
